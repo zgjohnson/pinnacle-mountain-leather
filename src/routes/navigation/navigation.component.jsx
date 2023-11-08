@@ -3,11 +3,14 @@ import { Outlet, Link } from 'react-router-dom';
 
 import { ReactComponent as LeatherLogo } from '../../assets/crown.svg';
 
+import CartIcon from '../../components/cart-icon/cart-icon.component';
+
 import { UserContext } from '../../context/user.context.jsx';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils.js'
 
 import './navigation.styles.scss';
+import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component';
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
@@ -29,7 +32,9 @@ const Navigation = () => {
               Sign In
             </Link>
           )}
+          <CartIcon/>
         </div>
+        <CartDropdown/>
       </div>
       <Outlet></Outlet>
     </Fragment>
